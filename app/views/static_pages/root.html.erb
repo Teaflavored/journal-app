@@ -1,9 +1,13 @@
 <h1>Welcome</h1>
+<div id="sidebar"></div>
 <div id="main"></div>
 
 
+
 <script>
+var _posts = JSON.parse('<%= Post.all.to_json.html_safe %>');
 $(document).ready(function(){
+  Journal.posts = new Journal.Collections.Posts(_posts);
   Journal.initialize();
 });
 </script>

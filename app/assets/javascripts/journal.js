@@ -5,7 +5,8 @@ window.Journal = {
   Routers: {},
   initialize: function() {
     new window.Journal.Routers.JournalRouter({
-      $rootEl: $("div#main")
+      $rootEl: $("div#main"),
+      $sidebar: $("div#sidebar")
     });
     
     Backbone.history.start();
