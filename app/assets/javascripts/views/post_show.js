@@ -1,0 +1,1 @@
+window.Journal.Views.PostShow = window.
