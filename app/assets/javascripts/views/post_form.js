@@ -25,7 +25,9 @@ window.Journal.Views.PostForm = Backbone.View.extend({
     this.model.save({}, {
       success: function() {
         window.Journal.posts.add(this.model)
-      },
+        Backbone.history.navigate("", {trigger: true})
+        this.$el.empty()
+      }.bind(this),
       error: function(model, resp){
         this.model.set(model.get("post"))
         this.render(resp.responseJSON); 
